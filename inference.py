@@ -29,7 +29,7 @@ try:
     print(f"\nSuccessfully loaded the best model from '{model_path}'.")
 except Exception as e:
     print(f"Error: Could not load the model from '{model_path}'.")
-    print(f"Please ensure the model was saved correctly in Step 6. Error details: {e}")
+    print(f"Error details: {e}")
     exit()
 
 # 3. Making predictions
@@ -49,7 +49,7 @@ y_true_emotion_names = label_encoder_classes[y_true_classes]
 
 print("\n--- Classification Report ---")
 # Generate and print the classification report
-# target_names are the actual labels for your classes
+# target_names are the actual labels for our classes
 print(classification_report(y_true_emotion_names, y_pred_emotion_names, target_names=label_encoder_classes))
 
 print("\n--- Confusion Matrix ---")
